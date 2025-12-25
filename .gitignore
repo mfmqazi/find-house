@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+env/
+venv/
+.env
+wa_session/
+listings.json
+# Keep masjids.json as it is config data
+# Keep index.html for GitHub Pages

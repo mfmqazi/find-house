@@ -1,0 +1,677 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Phoenix House Finder</title>
+            <style>
+                body { font-family: 'Segoe UI', sans-serif; background-color: #f3f4f6; color: #1f2937; margin: 0; padding: 20px; }
+                h1 { text-align: center; color: #db2777; margin-bottom: 20px; }
+                .status-bar { text-align: center; color: #6b7280; margin-bottom: 40px; font-size: 0.9em; }
+                .masjid-section { margin: 40px auto; max-width: 1200px; }
+                .masjid-title { font-size: 1.5em; color: #4b5563; border-left: 5px solid #db2777; padding-left: 15px; margin-bottom: 20px; font-weight: bold; background: white; padding: 10px 15px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+                .container { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
+                .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s; display: flex; flex-direction: column; }
+                .card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+                .card img { width: 100%; height: 200px; object-fit: cover; }
+                .card-content { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+                .source-badge { font-size: 0.75em; text-transform: uppercase; font-weight: bold; color: #9ca3af; margin-bottom: 5px; }
+                .price { font-size: 1.5em; color: #be185d; font-weight: 800; margin-bottom: 5px; }
+                .address { color: #4b5563; font-size: 1.1em; line-height: 1.4; margin-bottom: 15px; }
+                .dist-badge { align_self: flex-start; background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 20px; font-size: 0.85em; font-weight: 600; margin-bottom: 15px; }
+                .actions { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+                .btn { padding: 10px; text-align: center; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9em; transition: background 0.2s; }
+                .btn-view { background: #f3f4f6; color: #374151; }
+                .btn-view:hover { background: #e5e7eb; }
+                .btn-wa { background: #22c55e; color: white; }
+                .btn-wa:hover { background: #16a34a; }
+            </style>
+        </head>
+        <body>
+            <h1>Compatible Homes Near Masjids</h1>
+            <div class="status-bar">Tracking 32 listings across 7 Masjids</div>
+        
+            <div class="masjid-section">
+                <div class="masjid-title">ICNP · 13 found</div>
+                <div class="container">
+            
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/small_486f88c9-b6cc-4d18-ba7c-49747769f9dc.1.jpg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$725,000</div>
+                        <div class="address">802 East Roberts Road</div>
+                        <div class="dist-badge">📍 2.88 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/802-East-Roberts-Road-Phoenix-AZ-85022/69425a9792b35c33d10ccbb9" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (2.88 mi): 802 East Roberts Road - $725,000 - https://www.forsalebyowner.com/listing/802-East-Roberts-Road-Phoenix-AZ-85022/69425a9792b35c33d10ccbb9" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$475,000</div>
+                        <div class="address">11444 North 47th Avenue</div>
+                        <div class="dist-badge">📍 2.89 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/11444-North-47th-Avenue-Glendale-AZ-85304/67b4dad3b910d37ec00daaeb" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (2.89 mi): 11444 North 47th Avenue - $475,000 - https://www.forsalebyowner.com/listing/11444-North-47th-Avenue-Glendale-AZ-85304/67b4dad3b910d37ec00daaeb" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$573,020</div>
+                        <div class="address">8038 W Royal Palm Rd</div>
+                        <div class="dist-badge">📍 3.22 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/8038-W-Royal-Palm-Rd-Peoria-AZ-85345/693a3da8a4ebb7cc5d0326e6" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (3.22 mi): 8038 W Royal Palm Rd - $573,020 - https://www.forsalebyowner.com/listing/8038-W-Royal-Palm-Rd-Peoria-AZ-85345/693a3da8a4ebb7cc5d0326e6" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/small_9917c998-006c-4314-9a88-68d5483bc587.001.jpg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$469,900</div>
+                        <div class="address">4652 West Puget Avenue</div>
+                        <div class="dist-badge">📍 3.62 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/4652-West-Puget-Avenue-Glendale-AZ-85302/66ad0d4ecaf32d742303e607" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (3.62 mi): 4652 West Puget Avenue - $469,900 - https://www.forsalebyowner.com/listing/4652-West-Puget-Avenue-Glendale-AZ-85302/66ad0d4ecaf32d742303e607" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$450,000</div>
+                        <div class="address">1018 East Las Palmaritas Drive</div>
+                        <div class="dist-badge">📍 4.22 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/1018-East-Las-Palmaritas-Drive-Phoenix-AZ-85020/686339e47d0bc9d9e300958e" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (4.22 mi): 1018 East Las Palmaritas Drive - $450,000 - https://www.forsalebyowner.com/listing/1018-East-Las-Palmaritas-Drive-Phoenix-AZ-85020/686339e47d0bc9d9e300958e" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$819,890</div>
+                        <div class="address">5820 W Mauna Loa Ln</div>
+                        <div class="dist-badge">📍 4.34 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5820-W-Mauna-Loa-Ln-Glendale-AZ-85306/694248f30e0863354e02ee94" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (4.34 mi): 5820 W Mauna Loa Ln - $819,890 - https://www.forsalebyowner.com/listing/5820-W-Mauna-Loa-Ln-Glendale-AZ-85306/694248f30e0863354e02ee94" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$879,890</div>
+                        <div class="address">5826 W Mauna Loa Lane</div>
+                        <div class="dist-badge">📍 4.35 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5826-W-Mauna-Loa-Lane-Glendale-AZ-85306/694248ee18ebfc0c2a094266" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (4.35 mi): 5826 W Mauna Loa Lane - $879,890 - https://www.forsalebyowner.com/listing/5826-W-Mauna-Loa-Lane-Glendale-AZ-85306/694248ee18ebfc0c2a094266" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$449,000</div>
+                        <div class="address">12607 North 23rd Street</div>
+                        <div class="dist-badge">📍 4.60 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/12607-North-23rd-Street-Phoenix-AZ-85022/681c8fe31c47e5381f004c24" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (4.60 mi): 12607 North 23rd Street - $449,000 - https://www.forsalebyowner.com/listing/12607-North-23rd-Street-Phoenix-AZ-85022/681c8fe31c47e5381f004c24" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$502,995</div>
+                        <div class="address">5335 W. Las Palmaritas Drive</div>
+                        <div class="dist-badge">📍 4.72 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5335-W-Las-Palmaritas-Drive-Glendale-AZ-85302/6917f9268c485aeb9c0d58f4" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (4.72 mi): 5335 W. Las Palmaritas Drive - $502,995 - https://www.forsalebyowner.com/listing/5335-W-Las-Palmaritas-Drive-Glendale-AZ-85302/6917f9268c485aeb9c0d58f4" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/small_aede8dac-02cf-437f-8a2e-979ca5582b80.001.jpeg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$444,900</div>
+                        <div class="address">5553 West Hartford Avenue</div>
+                        <div class="dist-badge">📍 4.77 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5553-West-Hartford-Avenue-Glendale-AZ-85308/66ce4162e6ccc6798506e576" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (4.77 mi): 5553 West Hartford Avenue - $444,900 - https://www.forsalebyowner.com/listing/5553-West-Hartford-Avenue-Glendale-AZ-85308/66ce4162e6ccc6798506e576" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$502,995</div>
+                        <div class="address">5423 W Royal Palm Road</div>
+                        <div class="dist-badge">📍 4.80 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5423-W-Royal-Palm-Road-Glendale-AZ-85302/691949867dddb9bcc707e244" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (4.80 mi): 5423 W Royal Palm Road - $502,995 - https://www.forsalebyowner.com/listing/5423-W-Royal-Palm-Road-Glendale-AZ-85302/691949867dddb9bcc707e244" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$519,995</div>
+                        <div class="address">5449 W. Loma Lane</div>
+                        <div class="dist-badge">📍 4.95 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5449-W-Loma-Lane-Glendale-AZ-85302/6917f92a8c485aeb9c0d58f8" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (4.95 mi): 5449 W. Loma Lane - $519,995 - https://www.forsalebyowner.com/listing/5449-W-Loma-Lane-Glendale-AZ-85302/6917f92a8c485aeb9c0d58f8" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$529,995</div>
+                        <div class="address">5455 W. Loma Lane</div>
+                        <div class="dist-badge">📍 4.96 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5455-W-Loma-Lane-Glendale-AZ-85302/6917f929e8f37fc01f0a21a4" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICNP (4.96 mi): 5455 W. Loma Lane - $529,995 - https://www.forsalebyowner.com/listing/5455-W-Loma-Lane-Glendale-AZ-85302/6917f929e8f37fc01f0a21a4" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                </div></div>
+            <div class="masjid-section">
+                <div class="masjid-title">Islamic Center of Peoria · 3 found</div>
+                <div class="container">
+            
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/small_0dd466a7-e4a8-489e-86c6-8d8004158280.img-0754.jpeg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$385,000</div>
+                        <div class="address">20759 North 106th Avenue</div>
+                        <div class="dist-badge">📍 2.11 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/20759-North-106th-Avenue-Peoria-AZ-85382/68f6ae8fad46f75a360d243d" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near Islamic Center of Peoria (2.11 mi): 20759 North 106th Avenue - $385,000 - https://www.forsalebyowner.com/listing/20759-North-106th-Avenue-Peoria-AZ-85382/68f6ae8fad46f75a360d243d" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$479,990</div>
+                        <div class="address">7411 W ROSE LN</div>
+                        <div class="dist-badge">📍 3.74 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/7411-W-ROSE-LN-Glendale-AZ-85303/6929129d8202ba3f4f0d7b87" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near Islamic Center of Peoria (3.74 mi): 7411 W ROSE LN - $479,990 - https://www.forsalebyowner.com/listing/7411-W-ROSE-LN-Glendale-AZ-85303/6929129d8202ba3f4f0d7b87" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$853,000</div>
+                        <div class="address">6435 W Buckskin Trail</div>
+                        <div class="dist-badge">📍 4.39 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/6435-W-Buckskin-Trail-PHOENIX-AZ-85083/68a389533b553bb76e0ed036" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near Islamic Center of Peoria (4.39 mi): 6435 W Buckskin Trail - $853,000 - https://www.forsalebyowner.com/listing/6435-W-Buckskin-Trail-PHOENIX-AZ-85083/68a389533b553bb76e0ed036" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                </div></div>
+            <div class="masjid-section">
+                <div class="masjid-title">UICA · 7 found</div>
+                <div class="container">
+            
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/small_aede8dac-02cf-437f-8a2e-979ca5582b80.001.jpeg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$444,900</div>
+                        <div class="address">5553 West Hartford Avenue</div>
+                        <div class="dist-badge">📍 2.98 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5553-West-Hartford-Avenue-Glendale-AZ-85308/66ce4162e6ccc6798506e576" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near UICA (2.98 mi): 5553 West Hartford Avenue - $444,900 - https://www.forsalebyowner.com/listing/5553-West-Hartford-Avenue-Glendale-AZ-85308/66ce4162e6ccc6798506e576" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$819,890</div>
+                        <div class="address">5820 W Mauna Loa Ln</div>
+                        <div class="dist-badge">📍 4.01 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5820-W-Mauna-Loa-Ln-Glendale-AZ-85306/694248f30e0863354e02ee94" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near UICA (4.01 mi): 5820 W Mauna Loa Ln - $819,890 - https://www.forsalebyowner.com/listing/5820-W-Mauna-Loa-Ln-Glendale-AZ-85306/694248f30e0863354e02ee94" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$879,890</div>
+                        <div class="address">5826 W Mauna Loa Lane</div>
+                        <div class="dist-badge">📍 4.02 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5826-W-Mauna-Loa-Lane-Glendale-AZ-85306/694248ee18ebfc0c2a094266" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near UICA (4.02 mi): 5826 W Mauna Loa Lane - $879,890 - https://www.forsalebyowner.com/listing/5826-W-Mauna-Loa-Lane-Glendale-AZ-85306/694248ee18ebfc0c2a094266" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$309,000</div>
+                        <div class="address">19601 North 7th Street</div>
+                        <div class="dist-badge">📍 4.07 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/19601-North-7th-Street-Phoenix-AZ-85024/680e6d5f040bcf9e6f098bf4" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near UICA (4.07 mi): 19601 North 7th Street - $309,000 - https://www.forsalebyowner.com/listing/19601-North-7th-Street-Phoenix-AZ-85024/680e6d5f040bcf9e6f098bf4" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$798,490</div>
+                        <div class="address">7803 W HIDE TRL</div>
+                        <div class="dist-badge">📍 4.59 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/7803-W-HIDE-TRL-Peoria-AZ-85383/69437c9b2ff847abbb0a6385" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near UICA (4.59 mi): 7803 W HIDE TRL - $798,490 - https://www.forsalebyowner.com/listing/7803-W-HIDE-TRL-Peoria-AZ-85383/69437c9b2ff847abbb0a6385" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$662,490</div>
+                        <div class="address">7820 W HIDE TRL</div>
+                        <div class="dist-badge">📍 4.59 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/7820-W-HIDE-TRL-Peoria-AZ-85383/6942361a065c27aab9004894" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near UICA (4.59 mi): 7820 W HIDE TRL - $662,490 - https://www.forsalebyowner.com/listing/7820-W-HIDE-TRL-Peoria-AZ-85383/6942361a065c27aab9004894" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$479,990</div>
+                        <div class="address">7411 W ROSE LN</div>
+                        <div class="dist-badge">📍 4.94 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/7411-W-ROSE-LN-Glendale-AZ-85303/6929129d8202ba3f4f0d7b87" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near UICA (4.94 mi): 7411 W ROSE LN - $479,990 - https://www.forsalebyowner.com/listing/7411-W-ROSE-LN-Glendale-AZ-85303/6929129d8202ba3f4f0d7b87" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                </div></div>
+            <div class="masjid-section">
+                <div class="masjid-title">ICEV · 3 found</div>
+                <div class="container">
+            
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/small_ef765198-dc47-4a04-8bf3-97e989a524a1.32.jpg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$435,000</div>
+                        <div class="address">1126 W. Manor St</div>
+                        <div class="dist-badge">📍 1.40 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/1126-W-Manor-St-Chandler-AZ-85224/6917909bed523aa705032ff6" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICEV (1.40 mi): 1126 W. Manor St - $435,000 - https://www.forsalebyowner.com/listing/1126-W-Manor-St-Chandler-AZ-85224/6917909bed523aa705032ff6" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/small_901ef4ef-313b-45e6-8f9b-2e2b5012f6f1.img-2055.jpeg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$535,000</div>
+                        <div class="address">875 North Ithica Court</div>
+                        <div class="dist-badge">📍 1.84 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/875-North-Ithica-Court-Chandler-AZ-85225/690e8579cf7c7826f101ca55" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICEV (1.84 mi): 875 North Ithica Court - $535,000 - https://www.forsalebyowner.com/listing/875-North-Ithica-Court-Chandler-AZ-85225/690e8579cf7c7826f101ca55" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$315,000</div>
+                        <div class="address">317 W Calle Monte Vista</div>
+                        <div class="dist-badge">📍 3.27 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/317-W-Calle-Monte-Vista-Tempe-AZ-85284/5c78835ee49e3aa57f8b4568" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICEV (3.27 mi): 317 W Calle Monte Vista - $315,000 - https://www.forsalebyowner.com/listing/317-W-Calle-Monte-Vista-Tempe-AZ-85284/5c78835ee49e3aa57f8b4568" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                </div></div>
+            <div class="masjid-section">
+                <div class="masjid-title">ICCP · 9 found</div>
+                <div class="container">
+            
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$573,020</div>
+                        <div class="address">8038 W Royal Palm Rd</div>
+                        <div class="dist-badge">📍 0.87 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/8038-W-Royal-Palm-Rd-Peoria-AZ-85345/693a3da8a4ebb7cc5d0326e6" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICCP (0.87 mi): 8038 W Royal Palm Rd - $573,020 - https://www.forsalebyowner.com/listing/8038-W-Royal-Palm-Rd-Peoria-AZ-85345/693a3da8a4ebb7cc5d0326e6" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/small_9917c998-006c-4314-9a88-68d5483bc587.001.jpg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$469,900</div>
+                        <div class="address">4652 West Puget Avenue</div>
+                        <div class="dist-badge">📍 3.04 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/4652-West-Puget-Avenue-Glendale-AZ-85302/66ad0d4ecaf32d742303e607" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICCP (3.04 mi): 4652 West Puget Avenue - $469,900 - https://www.forsalebyowner.com/listing/4652-West-Puget-Avenue-Glendale-AZ-85302/66ad0d4ecaf32d742303e607" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$450,000</div>
+                        <div class="address">1018 East Las Palmaritas Drive</div>
+                        <div class="dist-badge">📍 3.15 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/1018-East-Las-Palmaritas-Drive-Phoenix-AZ-85020/686339e47d0bc9d9e300958e" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICCP (3.15 mi): 1018 East Las Palmaritas Drive - $450,000 - https://www.forsalebyowner.com/listing/1018-East-Las-Palmaritas-Drive-Phoenix-AZ-85020/686339e47d0bc9d9e300958e" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$502,995</div>
+                        <div class="address">5335 W. Las Palmaritas Drive</div>
+                        <div class="dist-badge">📍 3.62 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5335-W-Las-Palmaritas-Drive-Glendale-AZ-85302/6917f9268c485aeb9c0d58f4" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICCP (3.62 mi): 5335 W. Las Palmaritas Drive - $502,995 - https://www.forsalebyowner.com/listing/5335-W-Las-Palmaritas-Drive-Glendale-AZ-85302/6917f9268c485aeb9c0d58f4" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$502,995</div>
+                        <div class="address">5423 W Royal Palm Road</div>
+                        <div class="dist-badge">📍 3.68 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5423-W-Royal-Palm-Road-Glendale-AZ-85302/691949867dddb9bcc707e244" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICCP (3.68 mi): 5423 W Royal Palm Road - $502,995 - https://www.forsalebyowner.com/listing/5423-W-Royal-Palm-Road-Glendale-AZ-85302/691949867dddb9bcc707e244" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$519,995</div>
+                        <div class="address">5449 W. Loma Lane</div>
+                        <div class="dist-badge">📍 3.71 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5449-W-Loma-Lane-Glendale-AZ-85302/6917f92a8c485aeb9c0d58f8" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICCP (3.71 mi): 5449 W. Loma Lane - $519,995 - https://www.forsalebyowner.com/listing/5449-W-Loma-Lane-Glendale-AZ-85302/6917f92a8c485aeb9c0d58f8" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$529,995</div>
+                        <div class="address">5455 W. Loma Lane</div>
+                        <div class="dist-badge">📍 3.71 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/5455-W-Loma-Lane-Glendale-AZ-85302/6917f929e8f37fc01f0a21a4" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICCP (3.71 mi): 5455 W. Loma Lane - $529,995 - https://www.forsalebyowner.com/listing/5455-W-Loma-Lane-Glendale-AZ-85302/6917f929e8f37fc01f0a21a4" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$475,000</div>
+                        <div class="address">11444 North 47th Avenue</div>
+                        <div class="dist-badge">📍 4.10 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/11444-North-47th-Avenue-Glendale-AZ-85304/67b4dad3b910d37ec00daaeb" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICCP (4.10 mi): 11444 North 47th Avenue - $475,000 - https://www.forsalebyowner.com/listing/11444-North-47th-Avenue-Glendale-AZ-85304/67b4dad3b910d37ec00daaeb" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$240,000</div>
+                        <div class="address">3834 West Crittenden Lane</div>
+                        <div class="dist-badge">📍 4.37 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/3834-West-Crittenden-Lane-Phoenix-AZ-85019/686b76175c04ee3b4702bfaa" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICCP (4.37 mi): 3834 West Crittenden Lane - $240,000 - https://www.forsalebyowner.com/listing/3834-West-Crittenden-Lane-Phoenix-AZ-85019/686b76175c04ee3b4702bfaa" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                </div></div>
+            <div class="masjid-section">
+                <div class="masjid-title">ICC Tempe · 9 found</div>
+                <div class="container">
+            
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$395,000</div>
+                        <div class="address">311 South Robert Road</div>
+                        <div class="dist-badge">📍 1.06 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/311-South-Robert-Road-Tempe-AZ-85281/610835b0d5cf066e205d4cfa" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICC Tempe (1.06 mi): 311 South Robert Road - $395,000 - https://www.forsalebyowner.com/listing/311-South-Robert-Road-Tempe-AZ-85281/610835b0d5cf066e205d4cfa" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/small_3ffec3d9-8ff5-4f96-abf9-f5a79cf21024.real-estate-instagram-post.png" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$629,900</div>
+                        <div class="address">907 West Parkway Boulevard</div>
+                        <div class="dist-badge">📍 1.18 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/907-West-Parkway-Boulevard-Tempe-AZ-85281/6556b71ff2f5a03f760bf479" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICC Tempe (1.18 mi): 907 West Parkway Boulevard - $629,900 - https://www.forsalebyowner.com/listing/907-West-Parkway-Boulevard-Tempe-AZ-85281/6556b71ff2f5a03f760bf479" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$240,000</div>
+                        <div class="address">129 E Fairmont Dr</div>
+                        <div class="dist-badge">📍 1.96 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/129-E-Fairmont-Dr-Tempe-AZ-85282/5caa71b6e49e3ae46a8b456c" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICC Tempe (1.96 mi): 129 E Fairmont Dr - $240,000 - https://www.forsalebyowner.com/listing/129-E-Fairmont-Dr-Tempe-AZ-85282/5caa71b6e49e3ae46a8b456c" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$155,000</div>
+                        <div class="address">8350 East McKellips Road</div>
+                        <div class="dist-badge">📍 2.35 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/8350-East-McKellips-Road-Scottsdale-AZ-85257/6805700b114cb07c3e02bf66" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICC Tempe (2.35 mi): 8350 East McKellips Road - $155,000 - https://www.forsalebyowner.com/listing/8350-East-McKellips-Road-Scottsdale-AZ-85257/6805700b114cb07c3e02bf66" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$230,000</div>
+                        <div class="address">3320 South Juniper Street</div>
+                        <div class="dist-badge">📍 2.62 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/3320-South-Juniper-Street-Tempe-AZ-85282/5ef0d0d8dd27252042442217" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICC Tempe (2.62 mi): 3320 South Juniper Street - $230,000 - https://www.forsalebyowner.com/listing/3320-South-Juniper-Street-Tempe-AZ-85282/5ef0d0d8dd27252042442217" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$289,000</div>
+                        <div class="address">280 S Evergreen Rd #1301</div>
+                        <div class="dist-badge">📍 3.11 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/280-S-Evergreen-Rd-1301-Tempe-AZ-85281/5f343e124a956664202833fa" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICC Tempe (3.11 mi): 280 S Evergreen Rd #1301 - $289,000 - https://www.forsalebyowner.com/listing/280-S-Evergreen-Rd-1301-Tempe-AZ-85281/5f343e124a956664202833fa" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/prod/red/fsbo-react-apps/dfe01f42a5951e8d156ad02e8851c4ad.svg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$179,500</div>
+                        <div class="address">2687 East Oakleaf Drive</div>
+                        <div class="dist-badge">📍 3.18 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/2687-East-Oakleaf-Drive-Tempe-AZ-85281/5cfa150de49e3a082e8b456c" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICC Tempe (3.18 mi): 2687 East Oakleaf Drive - $179,500 - https://www.forsalebyowner.com/listing/2687-East-Oakleaf-Drive-Tempe-AZ-85281/5cfa150de49e3a082e8b456c" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/small_7255fa23-7b95-43b3-bff1-bf53c66d7ead.dscf7493.jpg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$645,000</div>
+                        <div class="address">2546 East Geneva Drive</div>
+                        <div class="dist-badge">📍 3.62 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/2546-East-Geneva-Drive-Tempe-AZ-85282/66abd212f6bbd5708b0beda4" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICC Tempe (3.62 mi): 2546 East Geneva Drive - $645,000 - https://www.forsalebyowner.com/listing/2546-East-Geneva-Drive-Tempe-AZ-85282/66abd212f6bbd5708b0beda4" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.forsalebyowner.com/small_3432ffbb-ad17-48fa-8c3d-0a93bd30a01e.3432ffbb-ad17-48fa-8c3d-0a93bd30a01e.jpg" alt="Home">
+                    <div class="card-content">
+                        <div class="source-badge">ForSaleByOwner</div>
+                        <div class="price">$235,000</div>
+                        <div class="address">6700 East Thomas Road</div>
+                        <div class="dist-badge">📍 3.90 miles away</div>
+                        <div class="actions">
+                            <a href="https://www.forsalebyowner.com/listing/6700-East-Thomas-Road-Scottsdale-AZ-85251/6907f9abc612063dbe0206b5" target="_blank" class="btn btn-view">View details</a>
+                            <a href="https://wa.me/?text=Check this house near ICC Tempe (3.90 mi): 6700 East Thomas Road - $235,000 - https://www.forsalebyowner.com/listing/6700-East-Thomas-Road-Scottsdale-AZ-85251/6907f9abc612063dbe0206b5" target="_blank" class="btn btn-wa">WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+                </div></div>
+        </body>
+        </html>
+        

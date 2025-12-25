@@ -1,0 +1,44 @@
+[
+    {
+        "name": "ICNP",
+        "address": "13246 N 23rd Ave, Phoenix, AZ 85029",
+        "lat": 33.6015,
+        "lon": -112.1118
+    },
+    {
+        "name": "Islamic Center of Peoria",
+        "address": "23915 N Lake Pleasant Pkwy, Peoria, AZ 85383",
+        "lat": 33.7012,
+        "lon": -112.2745
+    },
+    {
+        "name": "UICA",
+        "address": "19250 N 35th Ave, Phoenix, AZ 85308",
+        "lat": 33.6605,
+        "lon": -112.1336
+    },
+    {
+        "name": "ICNEV",
+        "address": "12125 E Via Linda, Scottsdale, AZ 85259",
+        "lat": 33.5873,
+        "lon": -111.8225
+    },
+    {
+        "name": "ICEV",
+        "address": "425 N Alma School Rd, Chandler, AZ 85224",
+        "lat": 33.308369,
+        "lon": -111.859098
+    },
+    {
+        "name": "ICCP",
+        "address": "7516 North Black Canyon Highway, Phoenix, AZ 85051",
+        "lat": 33.546571,
+        "lon": -112.112816
+    },
+    {
+        "name": "ICC Tempe",
+        "address": "131 E 6th St, Tempe, AZ 85281",
+        "lat": 33.4240604,
+        "lon": -111.9369396
+    }
+]
