@@ -41,11 +41,35 @@ def generate_html():
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Phoenix House Finder (Live Update)</title>
+        <title>Phoenix House Finder (Secure)</title>
+        <!-- Firebase SDKs -->
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
         <style>
-            body {{ font-family: 'Segoe UI', sans-serif; background-color: #f3f4f6; color: #1f2937; margin: 0; padding: 20px; }}
+            body {{ font-family: 'Segoe UI', sans-serif; background-color: #f3f4f6; color: #1f2937; margin: 0; padding: 0; }}
+            
+            /* Login Screen Styles */
+            #login-screen {{
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+                background: linear-gradient(135deg, #be185d 0%, #881337 100%);
+                display: flex; justify-content: center; align-items: center; z-index: 1000;
+            }}
+            .login-box {{ background: white; padding: 40px; border-radius: 12px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); width: 300px; text-align: center; }}
+            .login-box h2 {{ margin-top: 0; color: #881337; }}
+            .login-box input {{ width: 90%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; box-sizing: border-box; }}
+            .login-box button {{ width: 100%; padding: 12px; margin-top: 10px; background: #be185d; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; transition: background 0.2s; font-weight: bold; }}
+            .login-box button:hover {{ background: #9d174d; }}
+            .error {{ color: #ef4444; font-size: 0.9em; margin-top: 15px; display: none; background: #fee2e2; padding: 10px; border-radius: 6px; }}
+
+            /* App Content Styles */
+            #app-content {{ display: none; padding: 20px; }}
             h1 {{ text-align: center; color: #db2777; margin-bottom: 20px; }}
             .status-bar {{ text-align: center; color: #6b7280; margin-bottom: 40px; font-size: 0.9em; }}
+            .header-bar {{ display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; color: #666; font-size: 0.9em; }}
+            .logout-btn {{ color: #be185d; cursor: pointer; text-decoration: underline; font-weight: bold; }}
+            
+            /* Listing Cards */
             .masjid-section {{ margin: 40px auto; max-width: 1200px; }}
             .masjid-title {{ font-size: 1.5em; color: #4b5563; border-left: 5px solid #db2777; padding-left: 15px; margin-bottom: 20px; font-weight: bold; background: white; padding: 10px 15px; border-radius: 0 8px 8px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }}
             .container {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }}
@@ -66,6 +90,26 @@ def generate_html():
         </style>
     </head>
     <body>
+
+    <!-- Login Screen -->
+    <div id="login-screen">
+        <div class="login-box">
+            <h2>🔒 Secure Access</h2>
+            <p style="color: #666; font-size: 0.9em; margin-bottom: 20px;">Please sign in to view listings.</p>
+            <input type="email" id="emailInput" placeholder="Email" onkeyup="if(event.key==='Enter') document.getElementById('passInput').focus()">
+            <input type="password" id="passInput" placeholder="Password" onkeyup="if(event.key==='Enter') login()">
+            <button onclick="login()" id="loginBtn">Sign In</button>
+            <div id="loginError" class="error"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="app-content">
+        <div class="header-bar">
+            <span>Signed in as <strong id="userDisplay">...</strong></span>
+            <span class="logout-btn" onclick="logout()">Sign Out</span>
+        </div>
+        
         <h1>Compatible Homes Near Masjids</h1>
         <div class="status-bar">Tracking {len(listings)} listings across {len(masjids)} Masjids</div>
     """
@@ -109,6 +153,77 @@ def generate_html():
         html += '<div style="text-align:center; padding: 50px; color: #666;">No matching houses found in the current buffer. The script might still be running.</div>'
 
     html += """
+    </div> <!-- End App Content -->
+
+    <script>
+        // --- Firebase Configuration ---
+        const firebaseConfig = {
+            apiKey: "AIzaSyAYeSVUevKlQ0b7IWq97R1vQkirPgijer0",
+            authDomain: "find-house-fa06d.firebaseapp.com",
+            projectId: "find-house-fa06d",
+            storageBucket: "find-house-fa06d.firebasestorage.app",
+            messagingSenderId: "1028039915716",
+            appId: "1:1028039915716:web:34d6c09c02c4abb15d3191",
+            measurementId: "G-RFQYPYXX53"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // --- Auth Logic ---
+        const emailInput = document.getElementById('emailInput');
+        const passInput = document.getElementById('passInput');
+        const loginBtn = document.getElementById('loginBtn');
+        const errorMsg = document.getElementById('loginError');
+
+        function login() {
+            const email = emailInput.value;
+            const pass = passInput.value;
+            
+            if(!email || !pass) {
+                showError("Please enter email and password.");
+                return;
+            }
+
+            loginBtn.innerText = "Verifying...";
+            errorMsg.style.display = 'none';
+
+            auth.signInWithEmailAndPassword(email, pass)
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    showError(errorMessage);
+                    loginBtn.innerText = "Sign In";
+                });
+        }
+
+        function logout() {
+            auth.signOut();
+        }
+
+        function showError(msg) {
+            errorMsg.innerText = msg;
+            errorMsg.style.display = 'block';
+        }
+
+        // --- Observer ---
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                // User is signed in
+                document.getElementById('login-screen').style.display = 'none';
+                document.getElementById('app-content').style.display = 'block';
+                document.getElementById('userDisplay').innerText = user.email;
+            } else {
+                // User is signed out
+                document.getElementById('login-screen').style.display = 'flex';
+                document.getElementById('app-content').style.display = 'none';
+                loginBtn.innerText = "Sign In";
+                emailInput.value = "";
+                passInput.value = "";
+            }
+        });
+    </script>
     </body>
     </html>
     """
