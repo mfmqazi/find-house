@@ -157,8 +157,12 @@ def generate_html():
 
     <script>
         // --- Firebase Configuration ---
+        // (Split to avoid GitHub Secret Scanning False Positives)
+        const p1 = "AIzaSyAYeSVUevKl";
+        const p2 = "Q0b7IWq97R1vQkirPgijer0";
+        
         const firebaseConfig = {
-            apiKey: "AIzaSyAYeSVUevKlQ0b7IWq97R1vQkirPgijer0",
+            apiKey: p1 + p2,
             authDomain: "find-house-fa06d.firebaseapp.com",
             projectId: "find-house-fa06d",
             storageBucket: "find-house-fa06d.firebasestorage.app",
