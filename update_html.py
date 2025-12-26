@@ -171,6 +171,15 @@ def generate_html():
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
 
+        // --- SESSION PERSISTENCE (Log out on tab close) ---
+        auth.setPersistence(firebase.auth.Auth.Persistence.SESSION)
+            .then(() => {
+                // Persistence set successfully
+            })
+            .catch((error) => {
+                console.error("Auth Persistence Error:", error);
+            });
+
         // --- Auth Logic ---
         const emailInput = document.getElementById('emailInput');
         const passInput = document.getElementById('passInput');
@@ -189,6 +198,7 @@ def generate_html():
             loginBtn.innerText = "Verifying...";
             errorMsg.style.display = 'none';
 
+            // Sign in (Persistence is already set to SESSION above)
             auth.signInWithEmailAndPassword(email, pass)
                 .catch((error) => {
                     const errorCode = error.code;
